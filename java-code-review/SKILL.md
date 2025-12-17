@@ -1,25 +1,25 @@
 ---
-name: java-diff-review
+name: java-code-review
 description: 仅审查当前分支相对基线(master/main)的 Java 代码改动，但结合完整文件上下文给出结构化建议与改进方案，生成 Markdown 报告并可打包输出。
 allowed_tools:
   - Read
   - Grep
   - Glob
   - RunCommand
-entry: scripts/java_diff_review.py
+entry: scripts/java_code_review.py
 outputs:
-  - reviews/java/java_diff_review.md
+  - reviews/java/java_code_review.md
 ---
 # 目标
 
-在工作区内对 Java 文件进行差异化代码审查：只聚焦改动的 diff，但结合文件整体情况输出可读、可执行的建议，最终产出 `reviews/java/java_diff_review.md`。
+在工作区内对 Java 文件进行差异化代码审查：只聚焦改动的 diff，但结合文件整体情况输出可读、可执行的建议，最终产出 `reviews/java/java_code_review.md`。
 
 # 使用说明
 
 1. 工作目录需为 Git 仓库，并存在基线分支 `master` 或 `main`。
 2. 运行入口脚本：
-   - Python: `python3 .claude/skills/java-diff-review/scripts/java_diff_review.py`
-3. 报告生成位置：`reviews/java/java_diff_review.md`。
+   - Python: `python3 .claude/skills/java-diff-review/scripts/java_code_review.py`
+3. 报告生成位置：`reviews/java/java_code_review.md`。
 
 # 审查范围与原则
 
